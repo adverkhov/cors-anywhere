@@ -19,17 +19,18 @@
     "proxy",
     "heroku"
   ],
-  "main": "./lib/cors-anywhere.js",
+  "main": "index.js",
   "files": [
     "lib/",
     "test/",
     "Procfile",
     "demo.html",
-    "server.js"
+    "index.js"
   ],
   "dependencies": {
     "http-proxy": "1.11.1",
-    "proxy-from-env": "0.0.1"
+    "proxy-from-env": "0.0.1",
+    "cors-anywhere": "^0.4.4"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
@@ -41,6 +42,7 @@
     "supertest": "^2.0.1"
   },
   "scripts": {
+    "start": "node index.js",
     "lint": "eslint .",
     "test": "mocha ./test/test*.js --reporter spec",
     "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec"
